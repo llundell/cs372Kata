@@ -7,6 +7,7 @@
 */
 
 #include <string>
+#include "StringCalc.h"
 
 int stringCalc(const std::string & num)
 {
