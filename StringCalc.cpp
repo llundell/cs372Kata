@@ -17,7 +17,10 @@ int stringCalc(const std::string & num)
 	{
 		return 0;
 	}
-	return 0;
+	else
+	{
+		return std::stoi(num);
+	}
 }
 
 #define CATCH_CONFIG_MAIN
@@ -27,4 +30,8 @@ int stringCalc(const std::string & num)
 TEST_CASE("Empty string returns 0")
 {
   REQUIRE(stringCalc("") == 0);
+}
+TEST_CASE("A single number returns the value")
+{
+	REQUIRE(stringCalc("3") == 3);
 }
