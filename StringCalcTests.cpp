@@ -11,14 +11,24 @@
 #include "catch2.hh"
 #include "StringCalc.cpp"
 
-// 1. An empty string returns zero
-TEST_CASE("Empty string returns 0")
+TEST_CASE("1. Empty string returns 0")
 {
   REQUIRE(stringCalc("") == 0);
 }
 
-// 2. A single number returns the value
-TEST_CASE("A single number returns the value")
+TEST_CASE("2. A single number returns the value")
 {
 	REQUIRE(stringCalc("3") == 3);
+	REQUIRE(stringCalc("100") == 100);
+}
+
+TEST_CASE("3. Two numbers, comma delimited, returns the sum")
+{
+	REQUIRE(stringCalc("3, 4") == 7);
+	REQUIRE(stringCalc("5, 10") == 15);
+}
+
+TEST_CASE("4. Two numbers, newline delimited, returns the sum")
+{
+	REQUIRE(stringCalc("3\n4") == 7);
 }
